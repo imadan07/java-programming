@@ -1,0 +1,34 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SortNames {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter names (one per line). Enter an empty line to finish.");
+        String[] names = new String[100];
+        int count = 0;
+
+        while (true) {
+            String name = scanner.nextLine();
+            if (name.isEmpty()) {
+                break;
+            }
+            names[count] = name;
+            count++;
+        }
+
+        System.out.print("Order (A/D): ");
+        String order = scanner.nextLine();
+
+        if (order.equalsIgnoreCase("A")) {
+            Arrays.sort(names, 0, count);
+        } else if (order.equalsIgnoreCase("D")) {
+            Arrays.sort(names, 0, count, (a, b) -> b.compareTo(a));
+        }
+
+        System.out.println("Sorted Names:");
+        for (int i = 0; i < count; i++) {
+            System.out.println(names[i]);
+        }
+    }
+}
