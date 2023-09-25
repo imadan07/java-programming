@@ -1,0 +1,23 @@
+import java.util.*;
+import java.io.*;
+class vowels
+{
+public static void main(String args[])
+{
+Scanner sc = new Scanner(System.in);
+String word;
+int vow=0;
+char ch;
+System.out.println("enter the word");
+word=sc.nextLine();
+for(int i=0;i<word.length();i++)
+{
+ch=word.charAt(i);
+if(ch=='a' || ch=='A'||ch=='e'||ch=='E'||ch=='i'||ch=='I'||ch=='o'||ch=='O'||ch=='u'||ch=='U')
+{
+vow++;
+}
+}
+System.out.println("number of vowels"+vow);
+}
+}
